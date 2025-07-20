@@ -76,6 +76,8 @@ Use exclude: in Ansible copy tasks to skip .git, .swp, and vault.yml
 
 Use source: build with build.path in community.docker.docker_image
 
-📌 Author
+**📌 Author**
+
 Built by Vamsi Krishna
+
 Feel free to fork, star, and contribute!
