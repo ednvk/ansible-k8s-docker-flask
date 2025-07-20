@@ -18,66 +18,61 @@ ansible-k8s-docker-flat/
 
 
 **🌐 Workflow Summary**
-Ansible control node connects to:
+1) Ansible control node connects to:
 
-🔧 Docker server to build & push the Docker image
+  🔧 Docker server to build & push the Docker image
 
-☸️ Kubernetes server to deploy the app using YAML manifests
+  ☸️ Kubernetes server to deploy the app using YAML manifests
 
-Docker image is built from flask-app/ and pushed to Docker Hub.
+2) Docker image is built from flask-app/ and pushed to Docker Hub.
 
-Kubernetes manifests are applied to deploy the app in a cluster.
+3) Kubernetes manifests are applied to deploy the app in a cluster.
 
 
-📦 Technologies Used
+**📦 Technologies Used**
 Flask – Python micro web framework
-
 Docker – Containerization
-
 Docker Hub – Image registry
-
 Ansible – Configuration management & automation
-
 Kubernetes – Container orchestration
-
 Ubuntu EC2 instances – Hosting environment (AWS)
 
 
-🔐 Secure DockerHub Credentials
+**🔐 Secure DockerHub Credentials**
 DockerHub credentials are stored securely using Ansible Vault:
 ansible-vault create ansible/vault.yml
 dockerhub_username: your_dockerhub_username
 dockerhub_password: your_dockerhub_password_or_token
 
-Use --ask-vault-pass when running the playbook.
+Use **--ask-vault-pass** when running the playbook.
 
 
-🚀 How to Run
+**🚀 How to Run**
 ✅ Ensure passwordless SSH access to your Docker and K8s servers
-
 ✅ Ensure Docker is installed and logged in (docker login)
-
 ✅ Install required Ansible collections:
 ansible-galaxy collection install community.docker kubernetes.core
 
-🔥 Run the playbook:
+
+**🔥 Run the playbook:**
 cd ansible
 ansible-playbook -i inventory.ini deploy.yml --ask-vault-pass
 
 
-✅ Sample Flask Output
+**✅ Sample Flask Output**
 Once deployed, visit:
 http://<K8S-Node-IP>:<NodePort>
 
-Expected output:
+**Expected output:**
 🚀 Hello from Kubernetes with Ansible!
 
-🛡️ Best Practices
+
+**🛡️ Best Practices**
 Use t3.medium or higher instance types (Minikube requires 2+ vCPUs)
-
 Never commit vault.yml with decrypted values
-
 Use exclude: in Ansible copy tasks to skip .git, .swp, and vault.yml
+
+
 
 Use source: build with build.path in community.docker.docker_image
 
