@@ -1,4 +1,4 @@
-🚀 Flask App CI/CD with Ansible, Docker, and Kubernetes
+**🚀 Flask App CI/CD with Ansible, Docker, and Kubernetes**
 
 This project demonstrates a complete CI/CD pipeline using Ansible to automate the building and deployment of a Flask-based Python web application using Docker and Kubernetes across separate servers.
 
@@ -17,7 +17,7 @@ ansible-k8s-docker-flat/
 └── README.md
 
 
-🌐 Workflow Summary
+**🌐 Workflow Summary**
 Ansible control node connects to:
 
 🔧 Docker server to build & push the Docker image
